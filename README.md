@@ -1,7 +1,7 @@
 # Windows 10 Setup Script
 
 This is a scripts to setup `Windows 10` using `PowerShell`.  
-**Note:** You can modify the scripts to fit your own requirements.
+**Note:** _You can modify the scripts to fit your own requirements._
 
 ## Installation
 
