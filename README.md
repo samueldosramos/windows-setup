@@ -9,7 +9,7 @@ If you already have `Windows 10`, run these commands:
 ```
 git clone https://github.com/samuelramox/windows-setup.git && cd windows-setup
 
-./install/setup.ps1
+./install/script.ps1
 ```
 
 ## Steps
