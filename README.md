@@ -50,6 +50,17 @@ git clone https://github.com/samuelramox/windows-setup.git && cd windows-setup
 
 \* _So far, `Visual Studio Code Insiders` are required to use the [Remote - WSL](https://aka.ms/vscode-remote/download/wsl) extension._
 
+## Manual setup after installation
+
+### Enable clipboard history
+
+Open the `Settings` app and go to the `System group of settings`. Select the `Clipboard` tab, and turn on `Clipboard History`.
+
+### Block non-Store apps
+
+Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).
+**Note:** _I only do this when I've installed everything I need._
+
 ## References and more options
 
 - [EdiWang EnvSetup](https://github.com/EdiWang/EnvSetup/)
