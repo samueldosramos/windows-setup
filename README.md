@@ -50,7 +50,7 @@ git clone https://github.com/samuelramox/windows-setup.git && cd windows-setup
 
 \* _So far, `Visual Studio Code Insiders` are required to use the [Remote - WSL](https://aka.ms/vscode-remote/download/wsl) extension._
 
-## Manual setup after installation
+## Manual setup after installation (optional)
 
 ### Enable clipboard history
 
