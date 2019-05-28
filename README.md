@@ -56,6 +56,11 @@ git clone https://github.com/samuelramox/windows-setup.git && cd windows-setup
 
 Open the `Settings` app and go to the `System group of settings`. Select the `Clipboard` tab, and turn on `Clipboard History`.
 
+### Install QuickLook
+
+Allows user peek into a file content in lightning speed by just pressing the Space key.  
+Link in Microsoft Store: [QuickLook](https://www.microsoft.com/pt-br/p/quicklook/9nv4bs3l1h4s?ocid=badge&rtc=1&activetab=pivot:overviewtab)
+
 ### Block non-Store apps
 
 Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).   
