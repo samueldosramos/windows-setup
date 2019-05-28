@@ -69,4 +69,5 @@ Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).
 ## References and more options
 
 - [EdiWang EnvSetup](https://github.com/EdiWang/EnvSetup/)
-- [Win10 Initial Setup Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script)
+- [Win10 Initial Setup Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script)  
+- [QuickLook](https://pooi.moe/QuickLook/)
