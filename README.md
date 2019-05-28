@@ -58,7 +58,7 @@ Open the `Settings` app and go to the `System group of settings`. Select the `Cl
 
 ### Block non-Store apps
 
-Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).
+Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).   
 **Note:** _I only do this when I've installed everything I need._
 
 ## References and more options
