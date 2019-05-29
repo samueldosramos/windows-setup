@@ -29,8 +29,10 @@ $uwpRubbishApps = @(
   "Microsoft.BingNews",
   "Microsoft.OneConnect",
   "Microsoft.Microsoft3DViewer",
+  "HolographicFirstRun",
   "Microsoft.MicrosoftSolitaireCollection",
   "Microsoft.WindowsFeedbackHub",
+  "Microsoft.XboxApp",
   "Fitbit.FitbitCoach",
   "4DF9E0F8.Netflix")
 
@@ -97,20 +99,6 @@ curl.exe -L -o ubuntu-1804.appx https://aka.ms/wsl-ubuntu-1804
 Write-Host "Enabling PUA Protection in Windows Defender" -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Set-MpPreference -PUAProtection 1
-
-# -----------------------------------------------------------------------------
-# Raise UAC level
-Write-Host "Raising UAC level..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name"ConsentPromptBehaviorAdmin" -Type DWord -Value 5
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name"PromptOnSecureDesktop" -Type DWord -Value 1
-
-# -----------------------------------------------------------------------------
-# Disable Remote Desktop
-Write-Host "Disabling Remote Desktop..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server" -Name "fDenyTSConnections" -Type DWord -Value 1
-Disable-NetFirewallRule -Name "RemoteDesktop*"
 
 # -----------------------------------------------------------------------------
 # Disable Autoplay

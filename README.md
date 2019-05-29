@@ -1,6 +1,6 @@
 # Windows 10 Setup Script
 
-This is a scripts to setup `Windows 10` using `PowerShell`.  
+This is a scripts to setup `Windows 10` using `PowerShell`.
 **Note:** _You can modify the scripts to fit your own requirements._
 
 ## Installation
@@ -26,7 +26,9 @@ git clone https://github.com/samuelramox/windows-setup.git && cd windows-setup
   - Microsoft Print 3D
   - Microsoft Solitaire Collection
   - Microsoft Windows Feedback
+  - Microsoft Xbox
   - Netflix
+  - Windows Mixed Reality
 - Install `Chocolatey` and some apps:
   - [Fluent Terminal](https://github.com/felixse/FluentTerminal)
   - [Fira Code Font](https://github.com/tonsky/FiraCode)
@@ -40,8 +42,6 @@ git clone https://github.com/samuelramox/windows-setup.git && cd windows-setup
   - [Visual Studio Code](https://chocolatey.org/packages/vscode)
   - [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/)\*
 - Enable PUA Protection
-- Raise UAC level
-- Disable Remote Desktop
 - Disable Autoplay
 - Disable Autorun for all drives
 - Disable built-in Adobe Flash in IE and Edge
@@ -58,16 +58,16 @@ Open the `Settings` app and go to the `System group of settings`. Select the `Cl
 
 ### Install QuickLook
 
-Allows user peek into a file content in lightning speed by just pressing the Space key.  
+Allows user peek into a file content in lightning speed by just pressing the Space key.
 Link in Microsoft Store: [QuickLook](https://www.microsoft.com/pt-br/p/quicklook/9nv4bs3l1h4s?ocid=badge&rtc=1&activetab=pivot:overviewtab)
 
 ### Block non-Store apps
 
-Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).   
+Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).
 **Note:** _I only do this when I've installed everything I need._
 
 ## References and more options
 
 - [EdiWang EnvSetup](https://github.com/EdiWang/EnvSetup/)
-- [Win10 Initial Setup Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script)  
+- [Win10 Initial Setup Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script)
 - [QuickLook](https://pooi.moe/QuickLook/)
