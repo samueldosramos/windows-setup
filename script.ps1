@@ -63,7 +63,7 @@ if (Check-Command -cmdname 'git') {
 else {
   Write-Host ""
   Write-Host "Installing Git for Windows..." -ForegroundColor Green
-  choco install git -y
+  choco install git --params "/NoShellIntegration /NoAutoCrlf" -y
 }
 
 if (Check-Command -cmdname 'node') {
