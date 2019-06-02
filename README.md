@@ -5,12 +5,10 @@ This is a scripts to setup `Windows 10` using `PowerShell`.
 
 ## Installation
 
-If you already have `Windows 10`, run these commands:
+If you already have `Windows 10`, run these commands in `PowerShell`:
 
 ```
-git clone https://github.com/samuelramox/windows-setup.git && cd windows-setup
-
-./install/script.ps1
+Set-ExecutionPolicy Bypass; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/samuelramox/windows-setup/master/script.ps1'))
 ```
 
 ## Steps
