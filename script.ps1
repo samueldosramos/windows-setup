@@ -86,14 +86,6 @@ choco install franz -y
 choco install qbittorrent -y
 
 # -----------------------------------------------------------------------------
-# Install WSL and Ubuntu 18.04
-Write-Host ""
-Write-Host "Installing WSL..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-curl.exe -L -o ubuntu-1804.appx https://aka.ms/wsl-ubuntu-1804
-
-# -----------------------------------------------------------------------------
 # Enable PUA Protection in Windows Defender
 Write-Host "Enabling PUA Protection in Windows Defender" -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
@@ -135,6 +127,13 @@ If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
   New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" | Out-Null
 }
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" -Name "DODownloadMode" -Type DWord -Value 100
+
+# -----------------------------------------------------------------------------
+# Install WSL
+Write-Host ""
+Write-Host "Installing WSL..." -ForegroundColor Green
+Write-Host "------------------------------------" -ForegroundColor Green
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 
 # -----------------------------------------------------------------------------
 # Restart Windows
