@@ -37,15 +37,12 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
   - [PeaZip](http://www.peazip.org/)
   - [qBittorrent](https://www.qbittorrent.org/index.php)
   - [Visual Studio Code](https://chocolatey.org/packages/vscode)
-  - [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/)\*
 - Enable PUA Protection
 - Disable Autoplay
 - Disable Autorun for all drives
 - Disable built-in Adobe Flash in IE and Edge
 - Disable Windows Update P2P delivery optimization (WUDO) completely
 - Install WSL
-
-\* _So far, `Visual Studio Code Insiders` are required to use the [Remote - WSL](https://aka.ms/vscode-remote/download/wsl) extension._
 
 ## Manual setup after installation (optional)
 

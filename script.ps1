@@ -79,7 +79,6 @@ else {
 choco install peazip -y
 choco install googlechrome -y
 choco install vscode -y
-choco install vscode-insiders -y
 choco install fluent-terminal -y
 choco install firacode-ttf -y
 choco install franz -y
