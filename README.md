@@ -48,6 +48,12 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 
 ## Manual setup after installation (optional)
 
+### Terminal options:
+
+- [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot%3Aoverviewtab)
+- [Terminus](https://eugeny.github.io/terminus/)
+- [Fluent Terminal](https://github.com/felixse/FluentTerminal)
+
 ### Enable clipboard history
 
 Open the `Settings` app and go to the `System group of settings`. Select the `Clipboard` tab, and turn on `Clipboard History`.
