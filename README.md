@@ -15,14 +15,16 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 
 - Set a new computer name
 - Remove a few pre-installed `UWP` applications:
-  - Candy Crush Saga
+  - Candy Crush
   - Fitbit FitbitCoach
   - Microsoft 3D Builder
   - Microsoft 3D Viewer
   - Microsoft Bing News
+  - Microsoft Mixed Reality Portal
   - Microsoft One Connect
   - Microsoft Print 3D
   - Microsoft Solitaire Collection
+  - Microsoft Tips
   - Microsoft Windows Feedback
   - Microsoft Xbox
   - Netflix

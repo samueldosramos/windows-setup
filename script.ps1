@@ -23,14 +23,16 @@ Rename-Computer -NewName $computerName
 Write-Host "Removing UWP Rubbish..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 $uwpRubbishApps = @(
-  "king.com.CandyCrushSaga",
+  "king.com.CandyCrushFriends",
   "Microsoft.3DBuilder",
   "Microsoft.Print3D",
   "Microsoft.BingNews",
   "Microsoft.OneConnect",
   "Microsoft.Microsoft3DViewer",
   "HolographicFirstRun",
+  "Microsoft.MixedReality.Portal"
   "Microsoft.MicrosoftSolitaireCollection",
+  "Microsoft.Getstarted",
   "Microsoft.WindowsFeedbackHub",
   "Microsoft.XboxApp",
   "Fitbit.FitbitCoach",
