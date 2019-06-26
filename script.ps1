@@ -75,7 +75,7 @@ if (Check-Command -cmdname 'node') {
 else {
   Write-Host ""
   Write-Host "Installing Node.js..." -ForegroundColor Green
-  choco install nodejs -y
+  choco install nodejs-lts -y
 }
 
 choco install peazip -y

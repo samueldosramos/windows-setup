@@ -35,7 +35,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
   - [Franz](https://meetfranz.com/)
   - [Git](https://gitforwindows.org/) (with --params "/NoShellIntegration /NoAutoCrlf")
   - [Google Chrome](https://www.google.com/chrome/)
-  - [Node.js](https://nodejs.org/)
+  - [Node.js LTS](https://nodejs.org/)
   - [PeaZip](http://www.peazip.org/)
   - [qBittorrent](https://www.qbittorrent.org/index.php)
   - [Visual Studio Code](https://chocolatey.org/packages/vscode)
