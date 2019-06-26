@@ -30,7 +30,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
   - Netflix
   - Windows Mixed Reality
 - Install `Chocolatey` and some apps:
-  - [Fluent Terminal](https://github.com/felixse/FluentTerminal)
   - [Fira Code Font](https://github.com/tonsky/FiraCode)
   - [Franz](https://meetfranz.com/)
   - [Git](https://gitforwindows.org/) (with --params "/NoShellIntegration /NoAutoCrlf")
