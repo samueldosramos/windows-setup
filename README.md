@@ -64,7 +64,7 @@ Link in Microsoft Store: [QuickLook](https://www.microsoft.com/pt-br/p/quicklook
 
 ### Block non-Store apps
 
-Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).
+Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).  
 **Note:** _I only do this when I've installed everything I need._
 
 ## References and more options
