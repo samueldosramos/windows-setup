@@ -82,7 +82,6 @@ choco install peazip -y
 choco install googlechrome -y
 choco install vscode -y
 choco install firacode-ttf -y
-choco install franz -y
 choco install qbittorrent -y
 
 # -----------------------------------------------------------------------------
