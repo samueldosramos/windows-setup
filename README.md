@@ -31,7 +31,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
   - Windows Mixed Reality
 - Install `Chocolatey` and some apps:
   - [Fira Code Font](https://github.com/tonsky/FiraCode)
-  - [Franz](https://meetfranz.com/)
   - [Git](https://gitforwindows.org/) (with --params "/NoShellIntegration /NoAutoCrlf /SChannel /WindowsTerminal")
   - [Google Chrome](https://www.google.com/chrome/)
   - [Node.js LTS](https://nodejs.org/)
