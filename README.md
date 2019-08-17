@@ -42,6 +42,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 - Disable Autorun for all drives
 - Disable built-in Adobe Flash in IE and Edge
 - Disable Windows Update P2P delivery optimization (WUDO) completely
+- Install `oh-my-posh` and change `Set-ExecutionPolicy` to `AllSigned`
 - Install WSL and enable Hyper-V
 
 ## Manual setup after installation (optional)
@@ -49,6 +50,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 ### Terminal options:
 
 - [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot%3Aoverviewtab)
+- [Hyper](https://hyper.is)
 - [Terminus](https://eugeny.github.io/terminus/)
 - [Fluent Terminal](https://github.com/felixse/FluentTerminal)
 
@@ -63,11 +65,11 @@ Link in Microsoft Store: [QuickLook](https://www.microsoft.com/pt-br/p/quicklook
 
 ### Block non-Store apps
 
-Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).  
+Settings -> Apps -> Apps & features -> The Microsoft Store only (recommended).
 **Note:** _I only do this when I've installed everything I need._
 
 ## References and more options
 
 - [EdiWang EnvSetup](https://github.com/EdiWang/EnvSetup/)
 - [Win10 Initial Setup Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script)
-- [QuickLook](https://pooi.moe/QuickLook/)
+- [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
