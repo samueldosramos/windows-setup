@@ -42,7 +42,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 - Disable Autorun for all drives
 - Disable built-in Adobe Flash in IE and Edge
 - Disable Windows Update P2P delivery optimization (WUDO) completely
-- Install `oh-my-posh` and change `Set-ExecutionPolicy` to `AllSigned`
+- Install `oh-my-posh` and change `Set-ExecutionPolicy` to `Unrestricted`
 - Install WSL and enable Hyper-V
 
 ## Manual setup after installation (optional)
