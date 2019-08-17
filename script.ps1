@@ -128,10 +128,10 @@ If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" -Name "DODownloadMode" -Type DWord -Value 100
 
 # -----------------------------------------------------------------------------
-# Install oh-my-posh and change Set-ExecutionPolicy to "AllSigned"
+# Install oh-my-posh and change Set-ExecutionPolicy to "Unrestricted"
 Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
-Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 
 # -----------------------------------------------------------------------------
 # Install WSL
