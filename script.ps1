@@ -35,19 +35,19 @@ else {
   choco install git --params "/NoShellIntegration /NoAutoCrlf /SChannel /WindowsTerminal" -y
 }
 
-APPS=(
-  beekeeper-studio
-  googlechrome
-  insomnia
-  slack
-  vscode
-  zoom
+$apps= @(
+  "beekeeper-studio",
+  "googlechrome",
+  "insomnia",
+  "microsoft-windows-terminal",
+  "slack",
+  "vscode",
+  "zoom"
 )
 
-for app in ${APPS[@]}
-do
+foreach ($app in $apps) {
   choco install $app -y
-done
+}
 
 # -----------------------------------------------------------------------------
 # Install oh-my-posh and change Set-ExecutionPolicy to "Unrestricted"
@@ -69,5 +69,5 @@ Add-AppxPackage .\ubuntu.appx
 # -----------------------------------------------------------------------------
 # Restart Windows
 Write-Host "------------------------------------" -ForegroundColor Green
-Read-Host -Prompt "Setup is done, restart is needed, press [ENTER] to restart computer."
+Read-Host -Prompt "Setup is done. Restart is needed, press [ENTER] to restart computer."
 Restart-Computer
