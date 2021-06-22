@@ -38,7 +38,7 @@ else {
 $apps= @(
   "beekeeper-studio",
   "googlechrome",
-  "insomnia",
+  "insomnia-rest-api-client",
   "microsoft-windows-terminal",
   "slack",
   "vscode",
