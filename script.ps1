@@ -60,6 +60,7 @@ wsl --set-default-version 2
 
 # -----------------------------------------------------------------------------
 # Restart Windows
+Write-Host ""
 Write-Host "------------------------------------" -ForegroundColor Green
 Read-Host -Prompt "Setup is done. Restart is needed, press [ENTER] to restart computer."
 Restart-Computer
