@@ -50,12 +50,6 @@ foreach ($app in $apps) {
 }
 
 # -----------------------------------------------------------------------------
-# Install oh-my-posh and change Set-ExecutionPolicy to "Unrestricted"
-Install-Module posh-git -Scope CurrentUser
-Install-Module oh-my-posh -Scope CurrentUser
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
-
-# -----------------------------------------------------------------------------
 # Install WSL and Ubuntu
 Write-Host ""
 Write-Host "Installing WSL..." -ForegroundColor Green
