@@ -63,8 +63,7 @@ Write-Host "------------------------------------" -ForegroundColor Green
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 wsl --set-default-version 2
-curl.exe -L -o ubuntu.appx https://aka.ms/wsl-ubuntu
-Add-AppxPackage .\ubuntu.appx
+wsl.exe --install -d Ubuntu
 
 # -----------------------------------------------------------------------------
 # Restart Windows
