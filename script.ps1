@@ -48,7 +48,7 @@ foreach ($app in $apps) {
 }
 
 # -----------------------------------------------------------------------------
-# Install WSL and Ubuntu
+# Install WSL
 Write-Host ""
 Write-Host "Installing WSL..." -ForegroundColor Green
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
