@@ -51,8 +51,8 @@ foreach ($app in $Apps) {
 # Install WSL
 Write-Host ""
 Write-Host "Installing WSL..." -ForegroundColor Green
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 wsl --set-default-version 2
 
 # -----------------------------------------------------------------------------
