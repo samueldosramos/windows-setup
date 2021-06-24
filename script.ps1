@@ -25,7 +25,7 @@ Write-Host "Installing Windows apps..." -ForegroundColor Green
 
 if (Check-Command -cmdname 'git') {
   Write-Host "Git is already installed, checking new version..."
-  choco update git -y
+  choco upgrade git -y
 }
 else {
   Write-Host ""
