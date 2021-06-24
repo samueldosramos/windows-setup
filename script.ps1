@@ -33,7 +33,7 @@ else {
   choco install git --params "/NoShellIntegration /NoAutoCrlf /SChannel /WindowsTerminal" -y
 }
 
-$apps= @(
+$Apps= @(
   "beekeeper-studio",
   "googlechrome",
   "insomnia-rest-api-client",
@@ -43,7 +43,7 @@ $apps= @(
   "zoom"
 )
 
-foreach ($app in $apps) {
+foreach ($app in $Apps) {
   choco install $app -y
 }
 
