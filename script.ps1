@@ -17,13 +17,11 @@ if (Check-Command -cmdname 'choco') {
 else {
   Write-Host ""
   Write-Host "Installing Chocolatey for Windows..." -ForegroundColor Green
-  Write-Host "------------------------------------" -ForegroundColor Green
   Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 }
 
 Write-Host ""
 Write-Host "Installing Windows apps..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
 
 if (Check-Command -cmdname 'git') {
   Write-Host "Git is already installed, checking new version..."
@@ -53,7 +51,6 @@ foreach ($app in $apps) {
 # Install WSL and Ubuntu
 Write-Host ""
 Write-Host "Installing WSL..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
 wsl --set-default-version 2
@@ -61,6 +58,5 @@ wsl --set-default-version 2
 # -----------------------------------------------------------------------------
 # Restart Windows
 Write-Host ""
-Write-Host "------------------------------------" -ForegroundColor Green
-Read-Host -Prompt "Setup is done. Restart is needed, press [ENTER] to restart computer."
+Read-Host -Prompt "Setup is done. Restart is needed, press [ENTER] to restart computer"
 Restart-Computer
