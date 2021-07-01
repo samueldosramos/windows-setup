@@ -35,6 +35,7 @@ else {
 
 $Apps= @(
   "beekeeper-studio",
+  "docker-desktop",
   "googlechrome",
   "insomnia-rest-api-client",
   "microsoft-windows-terminal",
