@@ -38,7 +38,7 @@ $Apps= @(
   "docker-desktop",
   "googlechrome",
   "insomnia-rest-api-client",
-  "microsoft-windows-terminal",
+  "postman",
   "slack",
   "vscode",
   "zoom"
