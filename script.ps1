@@ -1,5 +1,4 @@
-# Windows 10 Setup Script
-# Font: https://github.com/samuelramox/windows-setup
+# Windows Setup Script
 # Run this script in PowerShell
 
 # -----------------------------------------------------------------------------
@@ -11,78 +10,68 @@ function Check-Command($cmdname) {
 }
 
 # -----------------------------------------------------------------------------
-# Set a new computer name
-$computerName = Read-Host 'Enter New Computer Name'
-Write-Host "Renaming this computer to: " $computerName  -ForegroundColor Yellow
-Rename-Computer -NewName $computerName
-
-# -----------------------------------------------------------------------------
 # Remove a few pre-installed UWP applications
 # To list all appx packages:
 # Get-AppxPackage | Format-Table -Property Name,Version,PackageFullName
 Write-Host "Removing UWP Rubbish..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
+
 $uwpRubbishApps = @(
-  "king.com.CandyCrushFriends",
-  "Microsoft.3DBuilder",
-  "Microsoft.Print3D",
+  "Disney.37853FC22B2CE",
   "Microsoft.BingNews",
-  "Microsoft.OneConnect",
-  "Microsoft.Microsoft3DViewer",
-  "HolographicFirstRun",
-  "Microsoft.MixedReality.Portal"
-  "Microsoft.MicrosoftSolitaireCollection",
+  "Microsoft.GetHelp",
   "Microsoft.Getstarted",
+  "Microsoft.MicrosoftSolitaireCollection",
+  "Microsoft.MicrosoftOfficeHub",
   "Microsoft.WindowsFeedbackHub",
-  "Microsoft.XboxApp",
-  "Fitbit.FitbitCoach",
-  "4DF9E0F8.Netflix")
+  "SpotifyAB.SpotifyMusic",
+  "TeamViewer.TeamViewer.Host",
+)
 
 foreach ($uwp in $uwpRubbishApps) {
   Get-AppxPackage -Name $uwp | Remove-AppxPackage
 }
 
 # -----------------------------------------------------------------------------
-# Install Chocolatey and some apps
-if (Check-Command -cmdname 'choco') {
-  Write-Host "Choco is already installed, skip installation."
+# Install Winget apps
+if (Check-Command -cmdname 'winget') {
+  Write-Host "Winget is already installed, skip installation."
 }
 else {
   Write-Host ""
-  Write-Host "Installing Chocolatey for Windows..." -ForegroundColor Green
-  Write-Host "------------------------------------" -ForegroundColor Green
-  Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+  Write-Host "Installing Winget for Windows..." -ForegroundColor Green
+  $hasPackageManager = Get-AppPackage -name 'Microsoft.DesktopAppInstaller'
+  if (!$hasPackageManager -or [version]$hasPackageManager.Version -lt [version]"1.10.0.0") {
+    Start-Process ms-appinstaller:?source=https://aka.ms/getwinget
+    Read-Host -Prompt "Press enter to continue..."
+}
 }
 
 Write-Host ""
-Write-Host "Installing Applications..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
+Write-Host "Installing Windows apps..." -ForegroundColor Green
 
 if (Check-Command -cmdname 'git') {
   Write-Host "Git is already installed, checking new version..."
-  choco update git -y
+  winget upgrade --id Git.Git
 }
 else {
   Write-Host ""
   Write-Host "Installing Git for Windows..." -ForegroundColor Green
-  choco install git --params "/NoShellIntegration /NoAutoCrlf /SChannel /WindowsTerminal" -y
+  winget install --id Git.Git --override '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NOCANCEL /SP- /LOG /COMPONENTS="assoc,ext,gitlfs,windowsterminal" /o:PathOption=Cmd'
 }
 
-if (Check-Command -cmdname 'node') {
-  Write-Host "Node.js is already installed, checking new version..."
-  choco update nodejs -y
-}
-else {
-  Write-Host ""
-  Write-Host "Installing Node.js..." -ForegroundColor Green
-  choco install nodejs-lts -y
-}
+$Apps= @(
+  "Google.Chrome",
+  "JanDeDobbeleer.OhMyPosh",
+  "Microsoft.PowerToys",
+  "Microsoft.VisualStudioCode",
+  "Postman.Postman",
+  "SlackTechnologies.Slack",
+  "QL-Win.QuickLook"
+)
 
-choco install peazip -y
-choco install googlechrome -y
-choco install vscode -y
-choco install firacode-ttf -y
-choco install qbittorrent -y
+foreach ($app in $Apps) {
+  winget install --id=$app -e --silent
+}
 
 # -----------------------------------------------------------------------------
 # Enable PUA Protection in Windows Defender
@@ -106,19 +95,6 @@ If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explor
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "NoDriveTypeAutoRun" -Type DWord -Value 255
 
 # -----------------------------------------------------------------------------
-# Disable built-in Adobe Flash in IE and Edge
-Write-Host "Disabling built-in Adobe Flash in IE and Edge..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer")) {
-  New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer" -Force | Out-Null
-}
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer" -Name "DisableFlashInIE" -Type DWord -Value 1
-If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Addons")) {
-  New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Addons" -Force | Out-Null
-}
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Addons" -Name "FlashPlayerEnabled" -Type DWord -Value 0
-
-# -----------------------------------------------------------------------------
 # Disable Windows Update P2P delivery optimization (WUDO) completely
 Write-Host "Disabling Windows Update P2P optimization (WUDO)..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
@@ -128,21 +104,20 @@ If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" -Name "DODownloadMode" -Type DWord -Value 100
 
 # -----------------------------------------------------------------------------
-# Install oh-my-posh and change Set-ExecutionPolicy to "Unrestricted"
-Install-Module posh-git -Scope CurrentUser
-Install-Module oh-my-posh -Scope CurrentUser
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
-
-# -----------------------------------------------------------------------------
 # Install WSL
 Write-Host ""
 Write-Host "Installing WSL..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
+wsl --install
+
+# -----------------------------------------------------------------------------
+# Install Nerd Font
+# To see the icons displayed in Oh My Posh, install a Nerd Font, and configure your terminal to use it
+Write-Host ""
+Write-Host "Installing Nerd Font on Oh-My-Posh..." -ForegroundColor Green
+oh-my-posh font install
 
 # -----------------------------------------------------------------------------
 # Restart Windows
-Write-Host "------------------------------------" -ForegroundColor Green
-Read-Host -Prompt "Setup is done, restart is needed, press [ENTER] to restart computer."
+Write-Host ""
+Read-Host -Prompt "Setup is done. Restart is needed, press [ENTER] to restart computer"
 Restart-Computer
