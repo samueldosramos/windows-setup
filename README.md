@@ -1,6 +1,6 @@
 # Windows 11 Setup Script
 
-This is a scripts to setup `Windows 11` using `PowerShell`.
+This is a scripts to setup `Windows 11` using `PowerShell`.  
 **Note:** _You can modify the scripts to fit your own requirements._
 
 ## Installation
